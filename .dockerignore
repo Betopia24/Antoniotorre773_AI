@@ -1,0 +1,24 @@
+# Docker and Git files
+.git
+.gitignore
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Virtual environment
+.venv
+venv
+env
+
+# Cached Python bytecode
+__pycache__/
+*.py[cod]
+
+# Uploaded and converted files (will be mounted as volumes)
+uploads/*
+converted_images/*
+
+# OS generated files
+.DS_Store
+.directory
+.Trash-*

@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  rgbtocmyk-api:
+    build: .
+    container_name: rgbtocmyk-api
+    ports:
+      - "8045:8045"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./converted_images:/app/converted_images
+    restart: unless-stopped
