@@ -13,11 +13,11 @@ pip install -r requirements.txt
 2. Run the API server:
 
 ```powershell
-python -m uvicorn main:app --host 127.0.0.1 --port 8045
+python -m uvicorn main:app --host 0.0.0.0 --port 8045
 ```
 
-- API root: http://127.0.0.1:8045
-- Interactive docs: http://127.0.0.1:8045/docs
+- API root: http://134.199.198.12:8045
+- Interactive docs: http://134.199.198.12:8045/docs
 
 ## API Endpoints
 
@@ -30,11 +30,14 @@ The service provides the following endpoints:
 ## Using the Python Client
 
 ```powershell
-# Basic usage
+# Basic usage (uses default server at 134.199.198.12:8045)
 python client.py path/to/image.png
 
 # Specify output file
 python client.py path/to/image.png --output converted.tiff
+
+# Use a different server URL
+python client.py path/to/image.png --url http://localhost:8045
 ```
 
 ## Features
@@ -54,7 +57,7 @@ python client.py path/to/image.png --output converted.tiff
 docker-compose up -d
 ```
 
-2. The API will be available at: http://localhost:8045
+2. The API will be available at: http://134.199.198.12:8045
 
 3. Stop the container:
 
@@ -69,8 +72,8 @@ When converting an image, the API returns a JSON response:
 ```json
 {
   "image_id": "7d2bd273-cbae-41cb-892d-79f0dca7725f",
-  "download_url": "http://127.0.0.1:8045/download/7d2bd273-cbae-41cb-892d-79f0dca7725f",
-  "view_url": "http://127.0.0.1:8045/view/7d2bd273-cbae-41cb-892d-79f0dca7725f"
+  "download_url": "http://134.199.198.12:8045/download/7d2bd273-cbae-41cb-892d-79f0dca7725f",
+  "view_url": "http://134.199.198.12:8045/view/7d2bd273-cbae-41cb-892d-79f0dca7725f"
 }
 ```
 
