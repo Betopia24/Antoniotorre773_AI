@@ -90,7 +90,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Convert RGB images to CMYK using the API")
     parser.add_argument("image", help="Path to the image file")
     parser.add_argument("--output", "-o", help="Path to save the converted file")
-    parser.add_argument("--url", default="http://localhost:8045", help="API URL (default: http://localhost:8045)")
+    parser.add_argument("--url", default="http://134.199.198.12:8045", help="API URL (default: http://134.199.198.12:8045)")
     
     args = parser.parse_args()
     
