@@ -1,6 +1,7 @@
 from fastapi import FastAPI, UploadFile, HTTPException, Request
 from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
 import io
 import os
@@ -8,6 +9,15 @@ import tempfile
 import uuid
 
 app = FastAPI()
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
 
 # Ensure output directory exists
 UPLOAD_DIR = "uploads"
